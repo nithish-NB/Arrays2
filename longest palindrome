@@ -44,3 +44,39 @@ public String longestPalindrome(String s) {
         
         return s.substring(st,end+1); }
 }
+####################################################
+public boolean isPalindrome(String str){
+        int start=0;
+        int end = str.length()-1;
+        
+        while(start<=end){
+            if(str.charAt(start) != str.charAt(end)) return false;
+            start++;
+            end--;
+        }
+        return true;
+    }
+public String longestPalindrome(String s) {
+        if(s.length()<2){
+            return s;
+        }
+        int maxlen=0;
+        String ans = "";
+        int len = s.length();
+        for(int i=0; i<len; i++){         
+            for(int j=i+1; j<=len; j++){    
+                if(j-i >= maxlen){  
+                String substr = s.substring(i,j);
+                    if(isPalindrome(substr)){
+                       int l = substr.length();
+                        if(l>maxlen){
+                            maxlen = l;
+                            ans = substr;
+                        }       
+                    }
+                    
+                }
+
+            }
+        }
+        return ans;
