@@ -1,3 +1,5 @@
+
+Boyer-Moore Majority Vote algorithm and my elaboration
 TC:O(N)
 SC:O(1)
 int count=0;
